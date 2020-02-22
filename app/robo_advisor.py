@@ -23,7 +23,7 @@ print("REQUESTING SOME DATA FROM THE INTERNET...")
 response = requests.get(request_url)
 #print(type(response))
 #print(response.status_code)
-#pprint(type(response.text))
+#pprint(type(response.text)) 
 
 #handle response error
 
@@ -54,6 +54,18 @@ latest_close = tsd[latest_day]["4. close"] # TODO: sort to ensure latest day is 
 
 
 
+#high_prices = [10, 20, 30, 5 ]
+#maximum of all high prices
+#recent_high = max(high_prices)
+
+high_prices = []
+
+for date in dates:
+    high_price = (tsd[date]["2. high"])
+    high_prices.append(float(high_price))
+
+recent_high = max(high_prices)
+
 #
 #INFO OUTPUTS
 #
@@ -68,7 +80,7 @@ print("REQUEST AT: 2018-02-20 02:00pm")
 print("-------------------------")
 print(f"LATEST DAY: {last_refreshed}")
 print(f"LATEST CLOSE: {to_usd(float(latest_close))}")
-print("RECENT HIGH: $101,000.00")
+print(f"RECENT HIGH: {to_usd(float(recent_high))}")
 print("RECENT LOW: $99,000.00")
 print("-------------------------")
 print("RECOMMENDATION: BUY!")
