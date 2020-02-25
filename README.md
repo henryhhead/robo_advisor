@@ -1,5 +1,8 @@
 # robo_advisor
 
+Run this code to help decide on buying a stock. To change the stock you are analyzing, change the four letter symbol listed under 'symbol'.
+
+
 ### Environment Setup
 
 
